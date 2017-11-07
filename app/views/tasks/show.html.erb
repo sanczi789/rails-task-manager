@@ -1,0 +1,24 @@
+<div>
+<h2><%= @task.title %></h2>
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+<%= link_to "Edit this task", task_edit_path, class: "link" %>
+</div>
+
+
+<p><%= @task.details %></p>
+<% if @task.completed == true %>
+  <div class="task">
+    <i class="fa fa-check-square-o" aria-hidden="true"></i>
+    This task is completed
+  </div>
+<% else %>
+  <div class="task">
+    <i class="fa fa-square-o" aria-hidden="true"></i>
+    This task is not completed yet
+  </div>
+<% end %>
+<hr>
+<div>
+  <i class="fa fa-undo" aria-hidden="true"></i>
+  <%= link_to "Back to list", tasks_path, class: "link" %>
+</div>
